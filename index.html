@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <div id="topOfPage">
+        <h1>Romhacking.com Survey</h1>
+    </div>
+    <div id="introblurb">
+        <p>
+            In this survey, you will be asked to answer multiple questions on the UI of <a target="_blank" href="https://Romhacking.com">Romhacking.com</a> (pictured below).
+            It is a site dedicated to maintaining Super Mario 64 Rom hacks and fostering more of a community around them.
+        </p>
+        <a target="_blank" href="https://Romhacking.com"><img src="assets/titlePage.png" alt="title"></a>
+        <p>
+            With that in mind, please visit the site for a few minutes (no need to create an account!) and then answer the following questions.
+        </p>
+    </div>
+    <div id = "question1">
+        <h2 id="questionHeader"> Question 1. </h2>
+        <h3 id="questionText"> Which of the following categories are you not able to sort hacks by? </h3>
+        <p>
+            <label for="hackParams">Choose a category:</label>
+            <select name="hackParams" id="hackParams">
+                <option value="author">Author</option>
+                <option value="points">Total Points</option>
+                <option value="stars">Total Stars</option>
+                <option value="creationDate">Creation Date</option>
+            </select>
+        </p>
+    </div>
+    <br>
+    <div id = "question2">
+        <h2 id="questionHeader"> Question 2. </h2>
+        <h3 id="questionText">According to the UI seen, which of these site elements is deemed most important?</h3>
+        <p>
+            <form>
+                <input type="radio" name="categories" value="hacks" checked>Rom Hacks
+                <br><input type="radio" name="categories" value="starDisplay">Star Display
+                <br><input type="radio" name="categories" value="forums">Forums
+                <br><input type="radio" name="categories" value="leaderboard">Leaderboard
+            </form>
+        </p>
+    </div>
+    <br>
+    <div id = "question3">
+        <h2 id="questionHeader"> Question 3. </h2>
+        <h3 id="questionText">Which of these features are implemented on the site?</h3>
+        <h5>Note that this is a multiple selection answer, and that account creation is not necessary.</h5>
+        <p>
+            <form action="/action_page.php">
+                <input type="checkbox" id="feature1" name="feature1" value="reviewHack">
+                <label for="feature1">With an account, reviewing a hack</label><br>
+                <input type="checkbox" id="feature2" name="feature2" value="downloadHack">
+                <label for="feature2">Downloading a hack</label><br>
+                <input type="checkbox" id="feature3" name="feature3" value="commentProfile">
+                <label for="feature3">With an account, Commenting on a user's profile</label><br>
+                <input type="checkbox" id="feature4" name="feature4" value="updateProgram">
+                <label for="feature4">Updating the StarDisplay.exe program</label><br>
+                <input type="checkbox" id="feature5" name="feature5" value="reportUser">
+                <label for="feature5">Reporting a user</label><br>
+                <input type="checkbox" id="feature6" name="feature6" value="profileInfo">
+                <label for="feature6">Viewing a user's In-progress hacks</label><br>
+                <input type="checkbox" id="feature7" name="feature7" value="commentLike">
+                <label for="feature7">Liking a comment</label><br>
+              </form>
+        </p>
+    </div>
+    <br>
+    <div id = "question4">
+        <h2 id="questionHeader"> Question 4. </h2>
+        <h3 id="questionText">If you could implement one feature to the site, what would it be and why?</h3>
+        <p>
+            <form>
+                <textarea name="featureAdd" style="width: 300px" rows="4" placeholder="Enter feature here."></textarea>
+            </form>
+        </p>
+    </div>
+    <div id="comments">
+        <h2 id="commentsHeader">Comments</h2>
+        <h3 id="comments">If you have any additional comments feel free to submit them here.</h3>
+        <p>
+            <form>
+                <textarea name="comments" style="width: 300px" rows="4" placeholder="Comments"></textarea>
+            </form>
+        </p>
+    </div>
+    <div id="submit">
+        <button id="submitBtn">Submit Survey</button>
+    </div>
+    <div id="footer">
+        <h4 id="signature">Made by André Lacroix</h6>
+    </div>
+</html>
