@@ -37,7 +37,6 @@ function arrToString(arr) {
 }
 
 function populateListProductChoices(slctId, slct2) {
-	window.alert("clicked");
     var s2 = document.getElementById(slct2);
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
