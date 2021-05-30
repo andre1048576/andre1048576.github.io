@@ -7,25 +7,29 @@
 </head>
 
 <body>
+    
+<!-- Header for the store-->
 
 <!-- Tab links, each one with an onclick event associated with it -->
-<div class="tab">
+<div class="logo">
+    <p>
+        <img class="logoIMG" src="assets/logo.jpg" alt="joke amazon logo"> 
+        <h3>From Z to A</h3>
+    </p>
+    <br>
+</div>
+<div class="tab">  
   <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
   <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
 </div>
+
 
 <!-- Tab content -->
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
   <p>Tell us a bit about your dietary Restrictions.</p>
 	Choose all that apply. <br>
-	<select multiple id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="ORGANIC">Vegetarian</option>
-    <option value="NUT">GlutenFree</option>
-    <option value="">None</option>
-	</select>
     <form id="dietSelect" name="dietSelect" >
         <div>
             <input id="nut" name = "Nut allergies" type="checkbox">
@@ -35,8 +39,12 @@
             <input id="lactose" name="Lactose intolerance" type="checkbox">
             <label for="lactose">Lactose intolerance</label>
         </div>
+        <div>
+            <input id="organic" name="organic" type="checkbox">
+            <label for="organic">Organic only</label>
+        </div>
     </form>
-    <button id="submitRestrictions" name="submitRestrictions" onclick="populateListProductChoices()"> Submit Selection </button>
+    <button id="submitRestrictions" name="submitRestrictions" onclick="populateListProductChoices([lactose,nut,organic], 'displayProduct')"> Submit Selection </button>
 </div>
 
 <div id="Products" class="tabcontent">

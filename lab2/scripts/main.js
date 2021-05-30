@@ -26,35 +26,46 @@ function openInfo(evt, tabName) {
 	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
+function arrToString(arr) {
+	
+	var output = "(";
+	for (const v of arr) {
+		output += v;
+		output += ", "
+	}
+	return output + ")";
+}
 
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
+function populateListProductChoices(slctId, slct2) {
     var s2 = document.getElementById(slct2);
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
-		
+	var restrictions = [];
+	for (const id of slctId) {
+		restrictions.push([id.id,id.checked]);
+	}
 	// obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value);
+    var optionArray = restrictListProducts(products, restrictions);
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
 		
 	for (i = 0; i < optionArray.length; i++) {
-			
-		var productName = optionArray[i];
+		var productName = optionArray[i].name;
+		var productPrice = optionArray[i].price;
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
-		checkbox.value = productName;
+		checkbox.value = productName + " - " + productPrice + "$";
 		s2.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
+		label.appendChild(document.createTextNode(productName + " - " + productPrice + "$"));
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
@@ -82,12 +93,12 @@ function selectedItems(){
 		if (ele[i].checked) {
 			para.appendChild(document.createTextNode(ele[i].value));
 			para.appendChild(document.createElement("br"));
-			chosenProducts.push(ele[i].value);
+			chosenProducts.push(ele[i].value.split(" - ",1)[0]);
 		}
 	}
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts) + "$"));
 		
 }
