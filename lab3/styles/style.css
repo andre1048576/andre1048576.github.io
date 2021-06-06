@@ -116,7 +116,7 @@
 }
 
 #myMenu button:hover {
-  background-color: rgb(218, 16, 16);
+  background-color: #a6d5f5;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -139,4 +139,18 @@
 
 .paddedImg {
   padding-right: 50px;
+}
+
+#noPad {
+  padding: 0px;
+  margin: 0px;
+}
+
+#noPadButton {
+  border: 0px;
+  background-color: #ffffff;
+}
+
+#noPad:hover {
+  background-color: #a6d5f5;
 }
