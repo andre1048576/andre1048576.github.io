@@ -1,0 +1,82 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+<!-- Header for the store-->
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="logo">
+    <p>
+        <img class="logoIMG" src="assets/logo.jpg" alt="joke amazon logo"> 
+        <h3>From Z to A</h3>
+    </p>
+    <br>
+</div>
+<div class="tab">  
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Search</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about your dietary Restrictions.</p>
+	Choose all that apply. <br>
+      <!--
+      <form id="dietSelect" name="dietSelect" >
+          <div>
+              <input id="nut" name = "Nut allergies" type="checkbox">
+              <label for="nut">Nut allergies</label>
+          </div>
+          <div>
+              <input id="lactose" name="Lactose intolerance" type="checkbox">
+              <label for="lactose">Lactose intolerance</label>
+          </div>
+          <div>
+              <input id="organic" name="organic" type="checkbox">
+              <label for="organic">Organic only</label>
+          </div>
+      </form>
+      -->
+      <input type="text" id="mySearch" onkeyup="searchBar()" placeholder="Search.." title="Type in a category">
+
+      <ul id="myMenu">
+        <li><button id="submitRestrictions" name="submitRestrictions" onclick="addSelection(0)">Lactose intolerance</button></li>
+        <li><button id="submitRestrictions" name="submitRestrictions" onclick="addSelection(1)">Nut Allergies</button></li>
+        <li><button id="submitRestrictions" name="submitRestrictions" onclick="addSelection(2)">Vegan</button></li>
+      </ul>
+      
+    <button id="submitRestrictions" name="submitRestrictions" onclick="populateListProductChoices([lactose,nut,organic], 'displayProduct')"> Submit Selection </button>
+</div>
+  
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+  <div id="footer">
+    <h4 id="signature">Made by André Lacroix</h6>
+  </div>
+   
+</body>
+</html>
