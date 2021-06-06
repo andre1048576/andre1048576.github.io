@@ -1,4 +1,4 @@
-
+var chosenProducts = [];
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
@@ -28,6 +28,7 @@ function changeTab(tabName) {
 		tabcontent[i].style.display = "none";
 	}
 	document.getElementById(tabName).style.display = "block";
+	document.getElementById(tabName+"Tab").style.display = "block";
 	
 }
 // generate a checkbox list from a list of products
@@ -84,14 +85,15 @@ function populateListProductChoices(slct2) {
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
-		checkbox.value = productName + " - " + productPrice + "$";
+		checkbox.value = productName + " - " + productPrice.toFixed(2) + "$";
+		checkbox.checked = chosenProducts.indexOf(productName) > -1;
 		checkbox.classList.add("right");
 		container.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName + " - " + productPrice + "$"));
+		label.appendChild(document.createTextNode(productName + " - " + productPrice.toFixed(2) + "$"));
 		label.classList.add("right");
 		container.appendChild(label);
 		s2.appendChild(container);
@@ -124,8 +126,7 @@ function createCancel(name,slot) {
 function selectedItems(){
 	
 	var ele = document.getElementsByName("product");
-	var chosenProducts = [];
-	
+	chosenProducts = [];
 	var c = document.getElementById('displayCart');
 	c.innerHTML = "";
 	
@@ -137,7 +138,8 @@ function selectedItems(){
 		if (ele[i].checked) {
 			para.appendChild(document.createTextNode(ele[i].value));
 			para.appendChild(document.createElement("br"));
-			chosenProducts.push(ele[i].value.split(" - ",1)[0]);
+			var elemName = ele[i].value.split(" - ",1)[0];
+			chosenProducts.push(elemName);
 		}
 	}
 		

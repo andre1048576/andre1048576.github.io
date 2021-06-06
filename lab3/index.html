@@ -22,7 +22,8 @@
 </div>
 <div class="tab">  
   <button class="tablinks" onclick="openInfo(event, 'Client')">Search</button>
-  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  <button class="tablinks" id="ProductsTab" style="display: none;" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" id="CartTab" style="display: none;" onclick="openInfo(event, 'Cart')">Cart</button>
 </div>
 
 
@@ -47,6 +48,7 @@
 </div>
   
 <div id="Products" class="tabcontent">
+  <button id="noPadButton" onclick="openInfo(event, 'Client')"><img id="noPad" alt="back" src="assets/back.jpg"></img></button>
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
 	 Choose items to buy:
