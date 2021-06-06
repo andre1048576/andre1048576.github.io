@@ -6,6 +6,8 @@
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
 <body>
     
 <!-- Header for the store-->
@@ -45,15 +47,16 @@
           </div>
       </form>
       -->
-      <input type="text" id="mySearch" onkeyup="searchBar()" placeholder="Search.." title="Type in a category">
-
-      <ul id="myMenu">
-        <li><button id="submitRestrictions" name="submitRestrictions" onclick="addSelection(0)">Lactose intolerance</button></li>
-        <li><button id="submitRestrictions" name="submitRestrictions" onclick="addSelection(1)">Nut Allergies</button></li>
-        <li><button id="submitRestrictions" name="submitRestrictions" onclick="addSelection(2)">Vegan</button></li>
-      </ul>
-      
-    <button id="submitRestrictions" name="submitRestrictions" onclick="populateListProductChoices([lactose,nut,organic], 'displayProduct')"> Submit Selection </button>
+    <div id="searchContainer">
+      <input type="text" id="mySearch" onkeyup="searchBar()" onclick="onSearchBar()"  placeholder="Search.." title="Type in a category">
+      <div id="myMenu" class="dropdown-content">
+          <button id="restrictions" name="submitRestrictions1" onclick="addSelection17('0')">Lactose intolerance</button>
+          <button id="restrictions2" name="submitRestrictions1" onclick="addSelection17('1')">Nut Allergies</button>
+          <button id="restrictions3" name="submitRestrictions1" onclick="addSelection17('2')">Vegan</button>
+      </div>
+      <!--<button id="restrictions" name="submitRestrictions1" onclick="addSelection('0')">Lactose intolerance</button>-->
+    </div>
+    <button id="submitRestrictions" name="submitRestrictions" onclick="populateListProductChoices('displayProduct')"> Submit Selection </button>
 </div>
   
 <div id="Products" class="tabcontent">
@@ -72,8 +75,6 @@
   <div id="displayCart"></div>
 </div>
 
-<script src="scripts/groceries.js"></script>
-<script src="scripts/main.js"></script>
   <div id="footer">
     <h4 id="signature">Made by André Lacroix</h6>
   </div>

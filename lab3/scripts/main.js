@@ -42,15 +42,23 @@ function arrToString(arr) {
 	return output + ")";
 }
 
-function populateListProductChoices(slctId, slct2) {
+var restrictions = [["lactose",false],["nut",false],["vegan",false]];
+
+function addSelection17(num) {
+	alert(restrictions[num][1]);
+	restrictions[num][1] = true;
+	onSearchBar();
+}
+
+function removeSelection(num) {
+	//restrictions[num][1] = false;
+}
+
+function populateListProductChoices(slct2) {
     var s2 = document.getElementById(slct2);
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
-	var restrictions = [];
-	for (const id of slctId) {
-		restrictions.push([id.id,id.checked]);
-	}
 	// obtain a reduced list of products based on restrictions
     var optionArray = restrictListProducts(products, restrictions);
 
@@ -120,15 +128,18 @@ function searchBar() {
   input = document.getElementById("mySearch");
   filter = input.value.toUpperCase();
   ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
-
+  li = ul.getElementsByTagName("button");
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("button")[0];
+    a = li[i];
     if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
       li[i].style.display = "none";
     }
   }
+}
+
+function onSearchBar() {
+	document.getElementById("myMenu").classList.toggle("show");
 }
