@@ -42,16 +42,19 @@ function arrToString(arr) {
 	return output + ")";
 }
 
-var restrictions = [["lactose",false],["nut",false],["vegan",false]];
+var restrictions = [["lactose",false],["nut",false],["organic",false]];
 
 function addSelection17(num) {
-	alert(restrictions[num][1]);
-	restrictions[num][1] = true;
+	if (!restrictions[num][1]) {
+		createCancel(restrictions[num][0],num);
+		restrictions[num][1] = true;
+	}
 	onSearchBar();
 }
 
-function removeSelection(num) {
-	//restrictions[num][1] = false;
+function removeSelection(elem,num) {
+	restrictions[num][1] = false;
+	elem.remove();
 }
 
 function populateListProductChoices(slct2) {
@@ -70,25 +73,49 @@ function populateListProductChoices(slct2) {
 		var productName = optionArray[i].name;
 		var productPrice = optionArray[i].price;
 		// create the checkbox and add in HTML DOM
+		var container = document.createElement("div");
+		container.classList.add("rightContainer");
+		var img = document.createElement("img");
+		img.classList.add("right");
+		img.src="assets/"+optionArray[i].name+".jpg";
+		img.width=100;
+		img.height=100;
+		container.appendChild(img);
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName + " - " + productPrice + "$";
-		s2.appendChild(checkbox);
+		checkbox.classList.add("right");
+		container.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
 		label.appendChild(document.createTextNode(productName + " - " + productPrice + "$"));
-		s2.appendChild(label);
-		
+		label.classList.add("right");
+		container.appendChild(label);
+		s2.appendChild(container);
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));  
 	}
 	changeTab('Products')  
 }
 
+function createCancel(name,slot) {
+	var cancel = document.createElement("div");
+	var txt = document.createElement("p");
+	var cncBtn = document.createElement("button");
+	var c = document.getElementById("right");
+	txt.innerHTML=name;
+	cncBtn.innerHTML="X"
+	cancel.append(txt);
+	cancel.append(cncBtn);
 
+	cncBtn.onclick=function(){removeSelection(cancel,slot);}
+	c.append(cancel);
+	txt.classList.toggle("removalText");
+	cncBtn.classList.toggle("removalBtn");
+	cancel.classList.toggle("cancel");
+}
 	
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
@@ -117,7 +144,7 @@ function selectedItems(){
 	// add paragraph and total price
 	c.appendChild(para);
 	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts) + "$"));
-		
+	changeTab('Cart')
 }
 
 // gotten from

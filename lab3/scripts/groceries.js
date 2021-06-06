@@ -11,7 +11,7 @@ var products = [
         price: 4.00
 	},
 	{
-		name: "Brocoli",
+		name: "Broccoli",
 		lactose:  true,
         nut:  true,
         organic:  true,

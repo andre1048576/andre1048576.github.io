@@ -37,7 +37,6 @@
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
-    border-top: none;
     margin-left: clamp(70px,15% + 10px,100px);
   }
 
@@ -48,10 +47,46 @@
   float: left;
 }
 
-   
+.removalText {
+  float: left;
+  padding: 0px;
+  padding-right: 16px;
+  margin-top:12px;
+}
+
+.cancel {
+  float: left;
+  width: 100%;
+}
+
+.removalBtn {
+  padding: 0px;
+  margin-top:12px;
+}
+
+#Client {
+  height: 300px;
+}
+
 #footer {
   margin: auto;
   text-align: center;
+}
+
+#left {
+  float:left;
+  padding-right: clamp(15px,15%,30px);
+}
+
+#right {
+  float:left;
+  display: block;
+  width: auto;
+}
+
+#rightContainer {
+  float: left;
+  display:inline-block;
 }
 
 #mySearch {
@@ -101,3 +136,7 @@
 }
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display: block;}
+
+.paddedImg {
+  padding-right: 50px;
+}

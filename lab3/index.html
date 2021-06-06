@@ -28,35 +28,22 @@
 
 <!-- Tab content -->
 <div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about your dietary Restrictions.</p>
-	Choose all that apply. <br>
-      <!--
-      <form id="dietSelect" name="dietSelect" >
-          <div>
-              <input id="nut" name = "Nut allergies" type="checkbox">
-              <label for="nut">Nut allergies</label>
-          </div>
-          <div>
-              <input id="lactose" name="Lactose intolerance" type="checkbox">
-              <label for="lactose">Lactose intolerance</label>
-          </div>
-          <div>
-              <input id="organic" name="organic" type="checkbox">
-              <label for="organic">Organic only</label>
-          </div>
-      </form>
-      -->
+  <div id="left">
+    <h3>Client Information</h3>
+    <p>Tell us a bit about your dietary Restrictions.</p>
+    Choose all that apply. <br>
     <div id="searchContainer">
       <input type="text" id="mySearch" onkeyup="searchBar()" onclick="onSearchBar()"  placeholder="Search.." title="Type in a category">
       <div id="myMenu" class="dropdown-content">
           <button id="restrictions" name="submitRestrictions1" onclick="addSelection17('0')">Lactose intolerance</button>
           <button id="restrictions2" name="submitRestrictions1" onclick="addSelection17('1')">Nut Allergies</button>
-          <button id="restrictions3" name="submitRestrictions1" onclick="addSelection17('2')">Vegan</button>
+          <button id="restrictions3" name="submitRestrictions1" onclick="addSelection17('2')">Organic</button>
       </div>
       <!--<button id="restrictions" name="submitRestrictions1" onclick="addSelection('0')">Lactose intolerance</button>-->
     </div>
     <button id="submitRestrictions" name="submitRestrictions" onclick="populateListProductChoices('displayProduct')"> Submit Selection </button>
+  </div> 
+  <div id="right"></div>
 </div>
   
 <div id="Products" class="tabcontent">
