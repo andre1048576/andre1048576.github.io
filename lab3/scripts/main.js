@@ -29,7 +29,13 @@ function changeTab(tabName) {
 	}
 	document.getElementById(tabName).style.display = "block";
 	document.getElementById(tabName+"Tab").style.display = "block";
-	
+
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+
+	document.getElementById(tabName+"Tab").className += " active";
 }
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
@@ -101,13 +107,13 @@ function populateListProductChoices(slct2) {
 	}
 	changeTab('Products')  
 }
-
+var name2Name = {"nut" : "Nut Allergy","lactose" : "Dairy Allergy","organic" : "Organic Only"};
 function createCancel(name,slot) {
 	var cancel = document.createElement("div");
 	var txt = document.createElement("p");
 	var cncBtn = document.createElement("button");
 	var c = document.getElementById("right");
-	txt.innerHTML=name;
+	txt.innerHTML=name2Name[name];
 	cncBtn.innerHTML="X"
 	cancel.append(txt);
 	cancel.append(cncBtn);
@@ -132,7 +138,7 @@ function selectedItems(){
 	
 	// build list of selected item
 	var para = document.createElement("P");
-	para.innerHTML = "You selected : ";
+	para.innerHTML = "Selected Items : ";
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
@@ -145,7 +151,7 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts) + "$"));
+	c.appendChild(document.createTextNode("Total Price : " + getTotalPrice(chosenProducts).toFixed(2) + "$"));
 	changeTab('Cart')
 }
 
