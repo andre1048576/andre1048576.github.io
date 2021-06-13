@@ -1,20 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
+  <title>Lab 4 Webpage</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="bg-red">
 
-<div class="container">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p>
+<div class="container-fluid logo-container bg-red">
+  <img class="float-left logo" alt="logo" src="assets/logo.png">
+  <h1 class="company-name">Pain Punchers</h1>
+  <p class="slogan">Knocking out pain scientifically<p>
 </div>
+<br>
+<div class="main-body">
+  <h2>About Us</h2>
+  <p> We at <span>Pain Punchers</span> are determined to relieve you of any injuries getting in the way of your continued success! Just look at all the <span>amazing</span> services we provide!</p>
 
+  <h2>Services</h2>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">→ We'll <span>destroy</span> any back pain you have with our <span>elite</span> acupuncture!</li>
+    <li class="list-group-item">→ We'll keep you <span>kicking</span> with our <span>high tier</span> knee braces!</li>
+    <li class="list-group-item">→ <span>Fight</span> hip pain with our custom Orthotics!</li>
+    <li class="list-group-item">→ Our massage therapy is the best way to <span>treat</span> yourself after winning, <span>champ</span>!</li>
+    <li class="list-group-item">→ Got <span>down cold</span>? Not for long with our <span>rockstar</span> Orthopedic care!</li>
+  </ul>
+
+  <h2>Our Team</h2>
+  <div class="employee">
+    <img alt="man" src="assets/happyMan.png">
+    <p>Steve really knows what it means to give it his all. He's always down to fight whatever nasty illness has struck his clients and always comes out on top!</p>
+  </div>
+  <div class="employee">
+    <img alt="woman" src="assets/happyWoman.png">
+    <p>Jill has always been a team player. She's always making sure you're getting better when she's around. You'll be glad to rely on her!</p>
+  </div>
+  <div class="employee">
+    <img alt="woman" src="assets/lastGuy.png">
+    <p>Here's bob from accounting.</p>
+  </div>
+</div>
+<div class="container-fluid inf-height footer bg-red">
+  <h4 class="text-center">Reach Us!</h4> 
+  <h5>Quick Book</h5>
+  <input class="input" type="text" placeholder="Service requested...">
+  <br>
+  <input class="input" type="text" placeholder="Full name...">
+  <br>
+  <p class="auto-width m-0"></p><input class="input" type="datetime-local">
+  <br>
+  <input class="input" type="text" placeholder="Email...">
+  <br>
+  <button class="btn-gray border-0">Submit!</button>
+  <h5>Contact Information</h5>
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+      <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+    </svg>111 Wellington St, Ottawa ON K1A 0A6 <br>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+    </svg>899-633-4225 <br>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+    </svg> pain.puncher@gmail.com
+  </p>
+</div>
 </body>
 </html>

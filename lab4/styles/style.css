@@ -1,0 +1,38 @@
+.bg-red {
+  background-color: #FF6368;
+}
+
+.btn-gray {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.logo-container {
+  height: 100px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+span {
+  color: #FF16E7;
+}
+
+.main-body {
+  background-color: #ffddde;
+}
+
+.list-group-flush li { border: none;
+  background-color: #ff16e800;
+}
+
+.nopad {
+  padding: 0;
+}
+
+.input {
+  background-color: #ffa0a3;
+  border: 0;
+  margin-bottom: 7px;
+}
